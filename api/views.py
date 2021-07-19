@@ -15,7 +15,7 @@ client = Client(settings.TWILIO_ACCOUNT_SID, settings.TWILIO_AUTH_TOKEN)
 class RoomView(View):
     def post(self, request, *args, **kwargs):
         room_name = request.POST.get("roomName", "default")
-        participant_label = request.POST.get("participantName", "default")
+        participant_label = request.POST.get("participantLabel", "default")
         response = VoiceResponse()
         dial = Dial()
         dial.conference(
